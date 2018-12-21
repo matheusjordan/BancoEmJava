@@ -9,27 +9,27 @@ public class testCaixaEletronico {
 	public static void main(String[] args) {
 		
 		//Criação das contas bancárias
-		contaBank cb1 = new contaBank(1);
+		ContaBank cb1 = new ContaBank(1);
 		cb1.setSaldo(300);
-		contaBank cb2 = new contaBank(2);
+		ContaBank cb2 = new ContaBank(2);
 		cb2.setSaldo(150);
-		contaBank cb3 = new contaBank(3);
+		ContaBank cb3 = new ContaBank(3);
 		cb3.setSaldo(75);
 		
 		//Criação dos clientes
-		clienteBank cl1 = new clienteBank("PEDRO", cb3);
-		cl1.setConta(cb2);
-		clienteBank cl2 = new clienteBank("MATHEUS", cb1);
+		ClienteBank cl1 = new ClienteBank("PEDRO", cb3);
+		cl1.addConta(cb2);
+		ClienteBank cl2 = new ClienteBank("MATHEUS", cb1);
 		
 		//Criação e teste dos caixas eletronicos
 		CaixaEletronico caixa1 = new CaixaEletronico();
-		caixa1.exibe();
+		caixa1.exibeTudo();
 		System.out.println("----------------");
 		CaixaEletronico caixa2 = new CaixaEletronico(cl1, cb1);
-		caixa2.exibe();
+		caixa2.exibeTudo();
 		System.out.println("----------------");
 		CaixaEletronico caixa3 = new CaixaEletronico(cl1, cb3);
-		caixa3.exibe();
+		caixa3.exibeTudo();
 		System.out.println("----------------");
 		System.out.println("");
 		

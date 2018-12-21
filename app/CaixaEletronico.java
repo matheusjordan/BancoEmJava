@@ -1,21 +1,19 @@
 package com.bradesco.app;
 
-import java.util.ArrayList;
-
 public class CaixaEletronico {
-	private contaBank contaOrigem;
-	private contaBank contaDestino;
+	private ContaBank contaOrigem;
+	private ContaBank contaDestino;
 	
 	public CaixaEletronico() {	
 	}
 	
-	public CaixaEletronico(clienteBank cliente, contaBank conta) {
+	public CaixaEletronico(ClienteBank cliente, ContaBank conta) {
 		if(cliente.getContas().contains(conta)) {
 			this.contaOrigem = conta;
 		}
 	}
 	
-	public void exibe() {
+	public void exibeTudo() {
 		System.out.println(this.contaOrigem);
 		System.out.println(this.contaDestino);
 	}
@@ -36,7 +34,7 @@ public class CaixaEletronico {
 	}
 	
 	//Função de tranferência
-	public boolean transferencia(double valor, contaBank contaDest) {
+	public boolean transferencia(double valor, ContaBank contaDest) {
 		this.contaDestino = contaDest;
 				
 		if(this.contaOrigem == this.contaDestino) {
